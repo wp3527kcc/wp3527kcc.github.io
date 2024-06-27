@@ -1,10 +1,4 @@
-import {
-  useState,
-  useCallback,
-  lazy,
-  Suspense,
-  useRef,
-} from "react";
+import { useState, useCallback, lazy, Suspense, useRef } from "react";
 import { Button, Space } from "antd";
 import { makeAutoObservable } from "mobx";
 // import { observable } from "rxjs";
@@ -80,16 +74,16 @@ const TimerView = observer(
     );
   }
 );
-async function delayForDemo(promise: any) {
-  await new Promise((resolve) => {
-    setTimeout(resolve, 1000);
-  });
-  return promise;
-}
+// async function delayForDemo(promise: any) {
+//   await new Promise((resolve) => {
+//     setTimeout(resolve, 1000);
+//   });
+//   return promise;
+// }
 let keyCount = 0;
 console.log(this);
 const Demo = lazy(() => {
-  return import("../components/Demo")
+  return import("../components/Demo");
   // return delayForDemo(import("../components/Demo"));
 });
 function App() {

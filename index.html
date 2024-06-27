@@ -7,26 +7,7 @@
     <title>Vite + React + TS</title>
   </head>
   <body>
-    <div id="root">
-      <h2>{{count}}</h2>
-      <button @click="increment">increment</button>
-      <button @click="reset">reset</button>
-    </div>
-    <!-- <script type="module" src="/src/main.tsx"></script> -->
-     <script src="/src/assets/js/vue.js"></script>
-     <script>
-new Vue({
-  el: "#root",
-data(){
-  return {count:1}
-},methods:{
-  increment(){this.count++},
-  reset(){
-    this.count=1
-  }
-}
-});
-
-     </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
