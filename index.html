@@ -7,7 +7,17 @@
     <title>Vite + React + TS</title>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div id="root">{{msg}}</div>
+    <!-- <script type="module" src="/src/main.tsx"></script> -->
+     <script src="/src/assets/js/vue.js"></script>
+     <script>
+new Vue({
+  el: "#root",
+data(){
+  return {msg:'hello github'}
+}
+});
+
+     </script>
   </body>
 </html>
