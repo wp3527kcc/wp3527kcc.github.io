@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.11/vue.global.min.js"></script>
+    <style>
+        #aa{
+            background-color: yellow;
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #bb{
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">{{ message }}</div>
+    <div id="aa">
+        <div id="bb"></div>
+    </div>
+</body>
+<script>
+    // const aa = document.getElementById('aa')
+    aa.addEventListener('click', e=> {
+        console.log(e, 'aa')
+        
+    }, false)
+    bb.addEventListener('click',  e=> {
+        console.log(e, 'bb')
+        e.stopPropagation();
+    }, false)
+    document.addEventListener('click',  e=> {
+        console.log(e, 'document')
+    }, false)
+</script>
+<script>
+//  const { createApp, ref } = Vue
+
+// createApp({
+//   setup() {
+//     const message = ref('Hello vue!')
+//     return {
+//       message
+//     }
+//   }
+// }).mount('#app')
+const target = document.getElementById('app')
+const obj = {}
+const deps = {}
+const mineVue = {}
+function init(key, initValue){
+    obj[key] = initValue
+    deps[key] = {}
+    Object.defineProperty(mineVue, key, {
+        get(){
+            return obj[key]
+        },
+        set(value){
+            // deps[key].forEach((item) => {
+            //     item
+            // })
+            obj[key] = value
+            console.log(value, target)
+            target.innerHTML = value
+        }
+    })
+}
+init('message', '2333')
+mineVue.message = '4555'
+
+    </script>
+</html>
