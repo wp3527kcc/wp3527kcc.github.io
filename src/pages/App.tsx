@@ -106,7 +106,7 @@ function App() {
 
   return (
     <>
-      <h1 className="text-3xl font-bold underline">kcc Blog 0522</h1>
+      <h1 className="text-3xl font-bold underline">kcc Blog 0523</h1>
       <div className="card">
         <Button
           onClick={useCallback(
