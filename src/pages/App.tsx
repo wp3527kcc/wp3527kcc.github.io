@@ -3,6 +3,7 @@ import { Button, Space } from "antd";
 import { makeAutoObservable } from "mobx";
 // import { observable } from "rxjs";
 import { observer } from "mobx-react";
+import viteSVG from '../../public/vite.svg'
 
 // import Demo from "../components/Demo";
 
@@ -185,6 +186,7 @@ function App() {
           <h2>Preview: {Date.now()}</h2>
           <Demo msg="hello world" />
         </Suspense>
+        <img src={viteSVG} />
       </div>
     </>
   );

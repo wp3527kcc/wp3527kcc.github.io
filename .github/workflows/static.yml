@@ -41,16 +41,16 @@ jobs:
         run: npm install
       
       - name: Build Vite project
-        run: npm run build # 假设你的构建命令是 `npm run build`，它会生成 `docs` 文件夹
+        run: npm run build # 假设你的构建命令是 `npm run build`，它会生成 `dist` 文件夹
       
       - name: Setup Pages
         uses: actions/configure-pages@v5
       
-      - name: Upload artifact (only docs folder)
+      - name: Upload artifact (only dist folder)
         uses: actions/upload-pages-artifact@v3
         with:
-          # 仅上传 docs 文件夹
-          path: 'docs'
+          # 仅上传 dist 文件夹
+          path: 'dist'
       
       - name: Deploy to GitHub Pages
         id: deployment
